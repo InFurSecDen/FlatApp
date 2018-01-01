@@ -21,6 +21,10 @@ namespace InFurSec.FlatApp.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel garageDoorStatusLabel { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel weatherDisplay { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
             if (garageDoorButton != null) {
@@ -31,6 +35,11 @@ namespace InFurSec.FlatApp.iOS
             if (garageDoorStatusLabel != null) {
                 garageDoorStatusLabel.Dispose ();
                 garageDoorStatusLabel = null;
+            }
+
+            if (weatherDisplay != null) {
+                weatherDisplay.Dispose ();
+                weatherDisplay = null;
             }
         }
     }
