@@ -11,6 +11,8 @@ namespace InFurSec.FlatApp.Shared
 {
     public class ApiClient
     {
+        private const string API_SCOPES = "openid profile email offline_access"; // Make scopes for "update last time at flat", etc
+
         private readonly OidcClient _oidcClient;
         private readonly GraphQLClient _graphqlClient;
 
@@ -22,9 +24,9 @@ namespace InFurSec.FlatApp.Shared
         {
             var oidcClientOptions = new OidcClientOptions
             {
-                Authority = "https://accounts.infursec.furry.nz",
-                ClientId = "", // TODO: Make ClientId GUID
-                Scope = "openid profile email offline_access", // Make scopes for "update last time at flat", etc
+                Authority = Settings.AuthServerEndpoint,
+                ClientId = Settings.ApiClientId,
+                Scope = API_SCOPES, 
                 ResponseMode = OidcClientOptions.AuthorizeResponseMode.Redirect,
 
                 RedirectUri = "InFurSec://logincallback",
@@ -33,7 +35,7 @@ namespace InFurSec.FlatApp.Shared
             };
 
             _oidcClient = new OidcClient(oidcClientOptions);
-            _graphqlClient = new GraphQLClient("https://shittyapi.infursec.furry.nz/graphql");
+            _graphqlClient = new GraphQLClient(Settings.ApiServerEndpoint);
 
         }
 
