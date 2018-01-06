@@ -1,0 +1,11 @@
+diff a/src/InFurSec.FlatApp.iOS/InFurSec.FlatApp.iOS.csproj b/src/InFurSec.FlatApp.iOS/InFurSec.FlatApp.iOS.csproj	(rejected hunks)
+@@ -121,9 +125,6 @@
+     <Reference Include="System.IdentityModel.Tokens.Jwt">
+       <HintPath>..\..\packages\System.IdentityModel.Tokens.Jwt.5.1.4\lib\netstandard1.4\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+     </Reference>
+-    <Reference Include="IdentityModel.OidcClient">
+-      <HintPath>..\..\packages\IdentityModel.OidcClient.2.3.0\lib\netstandard2.0\IdentityModel.OidcClient.dll</HintPath>
+-    </Reference>
+     <Reference Include="GraphQL.Common">
+       <HintPath>..\..\packages\GraphQL.Common.1.0.0\lib\netstandard2.0\GraphQL.Common.dll</HintPath>
+     </Reference>

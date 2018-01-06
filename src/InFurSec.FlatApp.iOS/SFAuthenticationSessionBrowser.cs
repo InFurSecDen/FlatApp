@@ -40,7 +40,9 @@ namespace InFurSec.FlatApp.iOS
                     }
                 });
 
+
             _sfAuthenticationSession.Start();
+
             return wait.Task;
         }
     }

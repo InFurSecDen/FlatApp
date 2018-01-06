@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InFurSec.FlatApp.Shared", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InFurSec.FlatApp.Android", "src\InFurSec.FlatApp.Android\InFurSec.FlatApp.Android.csproj", "{01FB3FDC-40D5-4407-9541-437E5FFA2ED5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{22A49EF5-7DDB-494E-BC7A-FB8D21E26D07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityModel.OidcClient", "lib\IdentityModel.OidcClient\IdentityModel.OidcClient.csproj", "{C920DECC-F6B9-4026-80BB-038B67F834A6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
@@ -41,10 +45,19 @@ Global
 		{01FB3FDC-40D5-4407-9541-437E5FFA2ED5}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{01FB3FDC-40D5-4407-9541-437E5FFA2ED5}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{01FB3FDC-40D5-4407-9541-437E5FFA2ED5}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{C920DECC-F6B9-4026-80BB-038B67F834A6}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{C920DECC-F6B9-4026-80BB-038B67F834A6}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{C920DECC-F6B9-4026-80BB-038B67F834A6}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{C920DECC-F6B9-4026-80BB-038B67F834A6}.Release|iPhone.Build.0 = Release|Any CPU
+		{C920DECC-F6B9-4026-80BB-038B67F834A6}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{C920DECC-F6B9-4026-80BB-038B67F834A6}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{C920DECC-F6B9-4026-80BB-038B67F834A6}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{C920DECC-F6B9-4026-80BB-038B67F834A6}.Debug|iPhone.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{4C6922AC-A630-485B-8175-43BD2273A5BB} = {20B25CDF-CD8F-4973-B62B-3AEF67204D72}
 		{29F7BE03-D8FA-4DF4-A2AB-5C1606B983E1} = {20B25CDF-CD8F-4973-B62B-3AEF67204D72}
 		{01FB3FDC-40D5-4407-9541-437E5FFA2ED5} = {20B25CDF-CD8F-4973-B62B-3AEF67204D72}
+		{C920DECC-F6B9-4026-80BB-038B67F834A6} = {22A49EF5-7DDB-494E-BC7A-FB8D21E26D07}
 	EndGlobalSection
 EndGlobal

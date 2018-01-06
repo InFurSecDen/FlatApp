@@ -46,5 +46,23 @@ namespace InFurSec.FlatApp.iOS {
                 resourceCulture = value;
             }
         }
+        
+        internal static string ApiClientId {
+            get {
+                return ResourceManager.GetString("ApiClientId", resourceCulture);
+            }
+        }
+        
+        internal static string ApiServerEndpoint {
+            get {
+                return ResourceManager.GetString("ApiServerEndpoint", resourceCulture);
+            }
+        }
+        
+        internal static string AuthServerEndpoint {
+            get {
+                return ResourceManager.GetString("AuthServerEndpoint", resourceCulture);
+            }
+        }
     }
 }

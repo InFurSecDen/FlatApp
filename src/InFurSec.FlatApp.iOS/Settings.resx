@@ -12,4 +12,13 @@
 	<resheader name="writer">
 		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
 	</resheader>
+    <data name="ApiClientId" xml:space="preserve">
+        <value>90EA2EF2-A5E4-4384-B5AD-D99C1B7CD0BB</value>
+      </data>
+      <data name="ApiServerEndpoint" xml:space="preserve">
+        <value>https://shittyapi.infursec.furry.nz/graphql</value>
+      </data>
+      <data name="AuthServerEndpoint" xml:space="preserve">
+        <value>https://accounts.infursec.furry.nz</value>
+      </data>
 </root>

@@ -1,7 +1,6 @@
 ﻿using System;
 using IdentityModel.OidcClient;
 using UIKit;
-using InFurSec.FlatApp.Shared;
 using Newtonsoft.Json.Linq;
 
 namespace InFurSec.FlatApp.iOS
@@ -32,7 +31,9 @@ namespace InFurSec.FlatApp.iOS
                 garageDoorStatusLabel.Text = "Something?";
             };
 
-            var weatherResult = _apiClient.RawQueryAsync(@"query{weather{temperature,temperatureWithWindChill,humidity,windSpeedAverage,windSpeedGust,windDirection,rainfall}}").GetAwaiter().GetResult();
+            var weatherResultTask = _apiClient.RawQueryAsync(@"query{weather{temperature,temperatureWithWindChill,humidity,windSpeedAverage,windSpeedGust,windDirection,rainfall}}");
+            var weatherResultAwaiter = weatherResultTask.GetAwaiter();
+            var weatherResult = weatherResultAwaiter.GetResult();
 
             var weatherResultLinq = JObject.Parse(weatherResult);
 

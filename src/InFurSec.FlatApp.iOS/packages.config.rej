@@ -1,0 +1,9 @@
+diff a/src/InFurSec.FlatApp.iOS/packages.config b/src/InFurSec.FlatApp.iOS/packages.config	(rejected hunks)
+@@ -3,7 +3,6 @@
+   <package id="GraphQL.Client" version="1.0.0" targetFramework="xamarinios10" />
+   <package id="GraphQL.Common" version="1.0.0" targetFramework="xamarinios10" />
+   <package id="IdentityModel" version="2.14.0" targetFramework="xamarinios10" />
+-  <package id="IdentityModel.OidcClient" version="2.3.0" targetFramework="xamarinios10" />
+   <package id="Microsoft.CSharp" version="4.4.1" targetFramework="xamarinios10" />
+   <package id="Microsoft.Extensions.DependencyInjection.Abstractions" version="2.0.0" targetFramework="xamarinios10" />
+   <package id="Microsoft.Extensions.Logging" version="2.0.0" targetFramework="xamarinios10" />
