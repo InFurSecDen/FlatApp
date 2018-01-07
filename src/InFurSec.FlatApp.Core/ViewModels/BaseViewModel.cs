@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace FlatApp
+namespace InFurSec.FlatApp.Core
 {
     public class BaseViewModel : INotifyPropertyChanged
     {

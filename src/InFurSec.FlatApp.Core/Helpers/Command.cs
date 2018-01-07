@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace FlatApp
+namespace InFurSec.FlatApp.Core
 {
     public sealed class Command<T> : Command
     {

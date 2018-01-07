@@ -1,6 +1,6 @@
 ﻿using System.Windows.Input;
 
-namespace FlatApp
+namespace InFurSec.FlatApp.Core
 {
     public class AboutViewModel : BaseViewModel
     {

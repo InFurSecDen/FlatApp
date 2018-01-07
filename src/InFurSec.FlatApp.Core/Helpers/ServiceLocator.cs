@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace FlatApp
+namespace InFurSec.FlatApp.Core
 {
     public sealed class ServiceLocator
     {

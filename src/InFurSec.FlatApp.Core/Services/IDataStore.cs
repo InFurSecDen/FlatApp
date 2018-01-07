@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace FlatApp
+namespace InFurSec.FlatApp.Core
 {
     public interface IDataStore<T>
     {

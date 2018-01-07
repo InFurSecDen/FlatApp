@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace FlatApp
+namespace InFurSec.FlatApp.Core
 {
     public class MockDataStore : IDataStore<Item>
     {

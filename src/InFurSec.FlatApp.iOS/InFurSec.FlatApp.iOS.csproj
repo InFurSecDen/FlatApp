@@ -158,6 +158,11 @@
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
     <InterfaceDefinition Include="Main.storyboard" />
   </ItemGroup>
-  <Import Project="..\InFurSec.FlatApp.Shared\InFurSec.FlatApp.Shared.projitems" Label="Shared" Condition="Exists('..\InFurSec.FlatApp.Shared\InFurSec.FlatApp.Shared.projitems')" />
+  <ItemGroup>
+    <ProjectReference Include="..\InFurSec.FlatApp.Core\InFurSec.FlatApp.Core.csproj">
+      <Project>{40303416-0843-42A6-9C8C-08F3FA2275A3}</Project>
+      <Name>InFurSec.FlatApp.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

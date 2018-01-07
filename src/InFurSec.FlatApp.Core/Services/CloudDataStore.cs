@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Plugin.Connectivity;
 
-namespace FlatApp
+namespace InFurSec.FlatApp.Core
 {
     public class CloudDataStore : IDataStore<Item>
     {

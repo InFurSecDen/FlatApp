@@ -5,9 +5,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C7441EED-198
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InFurSec.FlatApp.iOS", "src\InFurSec.FlatApp.iOS\InFurSec.FlatApp.iOS.csproj", "{F7F0AD09-86F5-4DCC-A62C-A8C12C761576}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "InFurSec.FlatApp.Shared", "src\InFurSec.FlatApp.Shared\InFurSec.FlatApp.Shared.shproj", "{B46527C3-15B7-4BA8-968A-086B783FB5A9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InFurSec.FlatApp.Android", "src\InFurSec.FlatApp.Android\InFurSec.FlatApp.Android.csproj", "{7E3F7530-1588-423D-B8E0-D6B56EADF2B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InFurSec.FlatApp.Droid", "src\InFurSec.FlatApp.Android\InFurSec.FlatApp.Droid.csproj", "{7E3F7530-1588-423D-B8E0-D6B56EADF2B2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InFurSec.FlatApp.Core", "src\InFurSec.FlatApp.Core\InFurSec.FlatApp.Core.csproj", "{40303416-0843-42A6-9C8C-08F3FA2275A3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,10 +43,22 @@ Global
 		{7E3F7530-1588-423D-B8E0-D6B56EADF2B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E3F7530-1588-423D-B8E0-D6B56EADF2B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E3F7530-1588-423D-B8E0-D6B56EADF2B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40303416-0843-42A6-9C8C-08F3FA2275A3}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{40303416-0843-42A6-9C8C-08F3FA2275A3}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{40303416-0843-42A6-9C8C-08F3FA2275A3}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{40303416-0843-42A6-9C8C-08F3FA2275A3}.Release|iPhone.Build.0 = Release|Any CPU
+		{40303416-0843-42A6-9C8C-08F3FA2275A3}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{40303416-0843-42A6-9C8C-08F3FA2275A3}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{40303416-0843-42A6-9C8C-08F3FA2275A3}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{40303416-0843-42A6-9C8C-08F3FA2275A3}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{40303416-0843-42A6-9C8C-08F3FA2275A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40303416-0843-42A6-9C8C-08F3FA2275A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40303416-0843-42A6-9C8C-08F3FA2275A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40303416-0843-42A6-9C8C-08F3FA2275A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{F7F0AD09-86F5-4DCC-A62C-A8C12C761576} = {C7441EED-1988-41E4-82AA-BB8093A3AB95}
-		{B46527C3-15B7-4BA8-968A-086B783FB5A9} = {C7441EED-1988-41E4-82AA-BB8093A3AB95}
 		{7E3F7530-1588-423D-B8E0-D6B56EADF2B2} = {C7441EED-1988-41E4-82AA-BB8093A3AB95}
+		{40303416-0843-42A6-9C8C-08F3FA2275A3} = {C7441EED-1988-41E4-82AA-BB8093A3AB95}
 	EndGlobalSection
 EndGlobal

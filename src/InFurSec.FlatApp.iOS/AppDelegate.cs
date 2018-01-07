@@ -1,6 +1,8 @@
 ﻿using Foundation;
 using UIKit;
 
+using InFurSec.FlatApp.Core;
+
 namespace FlatApp.iOS
 {
     // The UIApplicationDelegate for the application. This class is responsible for launching the

@@ -3,7 +3,7 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
 
-namespace FlatApp
+namespace InFurSec.FlatApp.Core
 {
     public class ItemsViewModel : BaseViewModel
     {

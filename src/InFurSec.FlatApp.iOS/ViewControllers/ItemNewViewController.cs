@@ -2,6 +2,8 @@
 
 using UIKit;
 
+using InFurSec.FlatApp.Core;
+
 namespace FlatApp.iOS
 {
     public partial class ItemNewViewController : UIViewController
