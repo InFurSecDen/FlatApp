@@ -1,6 +1,6 @@
 ﻿using UIKit;
 
-namespace FlatApp.iOS
+namespace InFurSec.FlatApp.iOS
 {
     public class Application
     {

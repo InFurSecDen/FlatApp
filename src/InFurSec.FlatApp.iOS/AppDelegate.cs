@@ -3,7 +3,7 @@ using UIKit;
 
 using InFurSec.FlatApp.Core;
 
-namespace FlatApp.iOS
+namespace InFurSec.FlatApp.iOS
 {
     // The UIApplicationDelegate for the application. This class is responsible for launching the
     // User Interface of the application, as well as listening (and optionally responding) to application events from iOS.

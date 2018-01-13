@@ -1,6 +1,6 @@
-﻿// WARNING
+// WARNING
 //
-// This file has been generated automatically by Xamarin Studio from the outlets and
+// This file has been generated automatically by Visual Studio from the outlets and
 // actions declared in your storyboard file.
 // Manual changes to this file will not be maintained.
 //
@@ -9,20 +9,19 @@ using System;
 using System.CodeDom.Compiler;
 using UIKit;
 
-namespace FlatApp.iOS
+namespace InFurSec.FlatApp.iOS
 {
-    [Register("ItemsViewController")]
+    [Register ("ItemsViewController")]
     partial class BrowseViewController
     {
         [Outlet]
-        [GeneratedCode("iOS Designer", "1.0")]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnAddItem { get; set; }
 
-        void ReleaseDesignerOutlets()
+        void ReleaseDesignerOutlets ()
         {
-            if (btnAddItem != null)
-            {
-                btnAddItem.Dispose();
+            if (btnAddItem != null) {
+                btnAddItem.Dispose ();
                 btnAddItem = null;
             }
         }

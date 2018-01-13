@@ -1,7 +1,8 @@
 ﻿using System;
+
 using UIKit;
 
-namespace FlatApp.iOS
+namespace InFurSec.FlatApp.iOS
 {
     public partial class TabBarController : UITabBarController
     {
