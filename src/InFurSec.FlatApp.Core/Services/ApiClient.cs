@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using GraphQL.Client;
 using GraphQL.Common.Request;
 using Newtonsoft.Json;
+using System.Net.Http;
+using Newtonsoft.Json.Linq;
 
 namespace InFurSec.FlatApp.Core
 {
@@ -13,10 +15,15 @@ namespace InFurSec.FlatApp.Core
         private readonly string _accessToken;
         private readonly GraphQLClient _graphQlClient;
 
-        public ApiClient(string accessToken)
+        public ApiClient(string accessToken, HttpMessageHandler httpMessageHandler = null)
         {
             _accessToken = accessToken;
-            _graphQlClient = new GraphQLClient(@"https://shittyapi.infursec.furry.nz/graphql");
+
+            // Some HttpClient implementations do not support TLS 1.2, so here we are :|
+            var graphQLClientOptions = new GraphQLClientOptions();
+            if (httpMessageHandler != null) graphQLClientOptions.HttpMessageHandler = httpMessageHandler;
+
+            _graphQlClient = new GraphQLClient(@"https://shittyapi.infursec.furry.nz:7448/graphql", graphQLClientOptions);
         }
 
         public Task<GarageDoor> GetGarageDoor(int Id, CancellationToken cancellationToken = default(CancellationToken))
@@ -30,7 +37,9 @@ namespace InFurSec.FlatApp.Core
 
             var json = await RawQueryAsync(query, null, cancellationToken);
 
-            var result = JsonConvert.DeserializeObject<Weather>(json);
+            JObject resultObject = JObject.Parse(json);
+
+            var result = resultObject["weather"].ToObject<Weather>();
 
             return result;
         }
@@ -48,7 +57,7 @@ namespace InFurSec.FlatApp.Core
             _graphQlClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _accessToken);
             var response = await _graphQlClient.PostAsync(request);
 
-            return response.Data.ToString();
+            return ((JObject)JToken.FromObject(response.Data)).ToString(); // TODO: Need to map this to a JSON string somehow, I don't think ToString works here
         }
 
         public Task<GarageDoor> ToggleGarageDoor(int Id, CancellationToken cancellationToken = default(CancellationToken))

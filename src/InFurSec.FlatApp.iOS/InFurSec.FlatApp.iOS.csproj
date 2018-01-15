@@ -25,7 +25,7 @@
     <IOSDebuggerPort>56086</IOSDebuggerPort>
     <MtouchLink>None</MtouchLink>
     <MtouchArch>x86_64</MtouchArch>
-    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
     <PlatformTarget>x86</PlatformTarget>
     <CodesignProvision>VS: nz.furry.infursec.FlatApp Development</CodesignProvision>
   </PropertyGroup>
@@ -76,7 +76,7 @@
     <IOSDebuggerPort>18081</IOSDebuggerPort>
     <MtouchLink>SdkOnly</MtouchLink>
     <MtouchArch>ARM64</MtouchArch>
-    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
     <PlatformTarget>x86</PlatformTarget>
     <CodesignProvision>VS: nz.furry.infursec.FlatApp Development</CodesignProvision>
   </PropertyGroup>
@@ -188,6 +188,10 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="SFAuthenticationSessionBrowser.cs" />
+    <Compile Include="ViewControllers\WeatherTestViewController.cs" />
+    <Compile Include="ViewControllers\WeatherTestViewController.designer.cs">
+      <DependentUpon>WeatherTestViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
