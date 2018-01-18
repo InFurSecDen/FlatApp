@@ -20,17 +20,30 @@ namespace InFurSec.FlatApp.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton LoginButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel WeatherDisplay { get; set; }
 
         [Action ("FetchWeatherButton_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void FetchWeatherButton_TouchUpInside (UIKit.UIButton sender);
 
+        [Action ("LoginButton_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void LoginButton_TouchUpInside (UIKit.UIButton sender);
+
         void ReleaseDesignerOutlets ()
         {
             if (FetchWeatherButton != null) {
                 FetchWeatherButton.Dispose ();
                 FetchWeatherButton = null;
+            }
+
+            if (LoginButton != null) {
+                LoginButton.Dispose ();
+                LoginButton = null;
             }
 
             if (WeatherDisplay != null) {

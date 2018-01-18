@@ -17,6 +17,7 @@
     <Folder Include="ViewModels\" />
     <Folder Include="Managers\" />
     <Folder Include="Enums\" />
+    <Folder Include="Options\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />

@@ -2,6 +2,10 @@
 using System.Threading.Tasks;
 using System.Threading;
 using System.IdentityModel.Tokens.Jwt;
+using IdentityModel.OidcClient;
+using IdentityModel.OidcClient.Browser;
+using Microsoft.IdentityModel.Tokens;
+
 namespace InFurSec.FlatApp.Core
 {
     public class UserManager
@@ -10,7 +14,10 @@ namespace InFurSec.FlatApp.Core
 
         private JwtSecurityToken _accessToken = null;
         private string _refreshToken = null;
-        private string _allowedScopes = null;
+
+        private string _clientId;
+        private string _callbackUrl;
+        private IBrowser _browser;
 
         private UserManager()
         {
@@ -26,6 +33,13 @@ namespace InFurSec.FlatApp.Core
                 }
                 return __instance;
             }
+        }
+
+        public static void SetOptions(UserManagerOptions options)
+        {
+            Instance._clientId = options.ClientId;
+            Instance._callbackUrl = options.CallbackUrl;
+            Instance._browser = options.Browser;
         }
 
         public bool IsLoggedIn
@@ -90,28 +104,59 @@ namespace InFurSec.FlatApp.Core
         {
             cancellationToken.ThrowIfCancellationRequested();
 
-            throw new NotImplementedException();
+            var oidcClient = GetOidcClient();
+            var request = new LoginRequest();
+            var result = await oidcClient.LoginAsync(request);
+
+            if (result.IsError) return false; // TODO: Better error messages
+                
+            var jwtHandler = new JwtSecurityTokenHandler();
+            if (!jwtHandler.CanReadToken(result.AccessToken)) throw new SecurityTokenValidationException("The server did not seem to issue a valid JWT.");
+            var jwtToken = jwtHandler.ReadJwtToken(result.AccessToken);
+
+            _refreshToken = result.RefreshToken;
+            _accessToken = jwtToken;
+
+            return true;
         }
 
-        public async Task<bool> LoadContextAsync(string refreshToken, CancellationToken cancellationToken = default)
+        public Task<bool> LoadContextAsync(string refreshToken, CancellationToken cancellationToken = default)
         {
             cancellationToken.ThrowIfCancellationRequested();
 
             throw new NotImplementedException();
         }
 
-        public async Task LogoutAsync(CancellationToken cancellationToken = default)
+        public Task LogoutAsync(CancellationToken cancellationToken = default)
         {
             cancellationToken.ThrowIfCancellationRequested();
 
             throw new NotImplementedException();
         }
 
-        public async Task<JwtSecurityToken> GetAccessTokenAsync(CancellationToken cancellationToken = default)
+        public Task<JwtSecurityToken> GetAccessTokenAsync(CancellationToken cancellationToken = default)
         {
             cancellationToken.ThrowIfCancellationRequested();
 
-            throw new NotImplementedException();
+            return Task.FromResult(_accessToken);
+        }
+
+        private OidcClient GetOidcClient()
+        {
+            var options = new OidcClientOptions
+            {
+                Authority = @"https://accounts.infursec.furry.nz",
+                ClientId = _clientId,
+                Scope = "openid profile resident garagedoor.read garagedoor.write weather.read",
+                ResponseMode = OidcClientOptions.AuthorizeResponseMode.Redirect,
+
+                RedirectUri = _callbackUrl,
+                PostLogoutRedirectUri = _callbackUrl,
+
+                Browser = _browser,
+            };
+
+            return new OidcClient(options);
         }
     }
 }

@@ -374,12 +374,21 @@
                                     <action selector="FetchWeatherButton_TouchUpInside:" destination="2851" id="2947" eventType="touchUpInside"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3255" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                <rect key="frame" x="184" y="485" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Log In"/>
+                                <connections>
+                                    <action selector="LoginButton_TouchUpInside:" destination="2851" id="3256" eventType="touchUpInside"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <navigationItem title="Weather Test" id="2942" key="navigationItem"/>
                     <connections>
                         <outlet property="WeatherDisplay" destination="2945" id="name-outlet-2945"/>
                         <outlet property="FetchWeatherButton" destination="2946" id="name-outlet-2946"/>
+                        <outlet property="LoginButton" destination="3255" id="name-outlet-3255"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2853" userLabel="First Responder" sceneMemberID="firstResponder"/>
