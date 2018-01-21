@@ -123,8 +123,12 @@ namespace InFurSec.FlatApp.Core
         public Task<bool> LoadContextAsync(string refreshToken, CancellationToken cancellationToken = default)
         {
             cancellationToken.ThrowIfCancellationRequested();
+            if (String.IsNullOrWhiteSpace(refreshToken)) throw new ArgumentNullException(nameof(refreshToken));
 
-            throw new NotImplementedException();
+            _refreshToken = refreshToken;
+            var result = RefreshAsync(cancellationToken);
+
+            return result;
         }
 
         public Task LogoutAsync(CancellationToken cancellationToken = default)
@@ -134,11 +138,39 @@ namespace InFurSec.FlatApp.Core
             throw new NotImplementedException();
         }
 
-        public Task<JwtSecurityToken> GetAccessTokenAsync(CancellationToken cancellationToken = default)
+        public async Task<JwtSecurityToken> GetAccessTokenAsync(CancellationToken cancellationToken = default)
         {
             cancellationToken.ThrowIfCancellationRequested();
 
-            return Task.FromResult(_accessToken);
+            if (_accessToken == null) return null;
+
+            if (DateTime.Now < _accessToken.ValidFrom || DateTime.Now > _accessToken.ValidTo)
+            {
+                var result = await RefreshAsync(cancellationToken);
+                if (!result) return null;
+            }
+
+            return _accessToken;
+        }
+
+        private async Task<bool> RefreshAsync(CancellationToken cancellationToken = default)
+        {
+            cancellationToken.ThrowIfCancellationRequested();
+
+            var oidcClient = GetOidcClient();
+
+            var result = await oidcClient.RefreshTokenAsync(_refreshToken);
+
+            if (result.IsError) return false; // TODO: Better error messages
+
+            var jwtHandler = new JwtSecurityTokenHandler();
+            if (!jwtHandler.CanReadToken(result.AccessToken)) throw new SecurityTokenValidationException("The server did not seem to issue a valid JWT.");
+            var jwtToken = jwtHandler.ReadJwtToken(result.AccessToken);
+
+            _refreshToken = result.RefreshToken;
+            _accessToken = jwtToken;
+
+            return true;
         }
 
         private OidcClient GetOidcClient()
