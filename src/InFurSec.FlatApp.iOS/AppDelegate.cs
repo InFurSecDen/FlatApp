@@ -25,7 +25,7 @@ namespace InFurSec.FlatApp.iOS
             UserManager.SetOptions(new UserManagerOptions
             {
                 ClientId = "90EA2EF2-A5E4-4384-B5AD-D99C1B7CD0BB",
-                CallbackUrl = "https://infursec.furry.nz/ios/login-callback",
+                CallbackUrl = "InFurSec://callback",
                 Browser = new SFAuthenticationSessionBrowser(),
             });
 
