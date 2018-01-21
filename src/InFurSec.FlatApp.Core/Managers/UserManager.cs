@@ -147,7 +147,7 @@ namespace InFurSec.FlatApp.Core
             {
                 Authority = @"https://accounts.infursec.furry.nz",
                 ClientId = _clientId,
-                Scope = "openid profile resident garagedoor.read garagedoor.write weather.read",
+                Scope = "openid profile resident garagedoor.read garagedoor.write weather.read offline_access",
                 ResponseMode = OidcClientOptions.AuthorizeResponseMode.Redirect,
 
                 RedirectUri = _callbackUrl,
