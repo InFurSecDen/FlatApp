@@ -90,7 +90,7 @@ namespace InFurSec.FlatApp.Core
             }
         }
 
-        public DateTimeOffset? SessionExpiry
+        public DateTimeOffset? AccessTokenExpiry
         {
             get
             {
