@@ -4,6 +4,7 @@ using Android.App;
 using Android.OS;
 using Android.Widget;
 using Android.Support.Design.Widget;
+using InFurSec.FlatApp.Core;
 
 namespace FlatApp.Droid
 {

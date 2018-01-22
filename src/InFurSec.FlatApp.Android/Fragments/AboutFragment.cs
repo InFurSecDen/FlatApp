@@ -2,6 +2,7 @@
 using Android.OS;
 using Android.Views;
 using Android.Widget;
+using InFurSec.FlatApp.Core;
 
 namespace FlatApp.Droid
 {
