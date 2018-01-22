@@ -8,7 +8,7 @@ namespace InFurSec.FlatApp.Core
         public int Humidity { get; set; }
         public int WindSpeedAverage { get; set; }
         public int WindSpeedGust { get; set; }
-        public int WindSpeedDirection { get; set; }
+        public int WindDirection { get; set; }
         public double Rainfall { get; set; }
     }
 }

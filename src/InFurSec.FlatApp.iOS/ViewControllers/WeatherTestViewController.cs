@@ -26,7 +26,11 @@ namespace InFurSec.FlatApp.iOS
 
             var result = await apiClient.GetWeatherAsync();
 
-            WeatherDisplay.Text = result.Temperature + "℃";
+            WeatherDisplay.Text = $"Temperature: {result.Temperature}℃\n" +
+                $"Humidity: {result.Humidity}%\n" +
+                $"Wind Speed: {result.WindSpeedAverage}km/h (gusts to {result.WindSpeedGust}km/h)\n" +
+                $"Wind Direction: {result.WindDirection}º\n" +
+                $"Rainfall: {result.Rainfall}mm";
         }
 
         async partial void LoginButton_TouchUpInside(UIButton sender)
