@@ -165,22 +165,6 @@
     <ImageAsset Include="Assets.xcassets\Contents.json" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ViewControllers\DetailViewControllers\BrowseItemDetailViewController.cs" />
-    <Compile Include="ViewControllers\DetailViewControllers\BrowseItemDetailViewController.designer.cs">
-      <DependentUpon>BrowseItemDetailViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewControllers\AboutViewController.cs" />
-    <Compile Include="ViewControllers\AboutViewController.designer.cs">
-      <DependentUpon>AboutViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewControllers\BrowseViewController.cs" />
-    <Compile Include="ViewControllers\BrowseViewController.designer.cs">
-      <DependentUpon>BrowseViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewControllers\ItemNewViewController.cs" />
-    <Compile Include="ViewControllers\ItemNewViewController.designer.cs">
-      <DependentUpon>ItemNewViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="ViewControllers\TabBarController.cs" />
     <Compile Include="ViewControllers\TabBarController.designer.cs">
       <DependentUpon>TabBarController.cs</DependentUpon>
@@ -188,9 +172,37 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="SFAuthenticationSessionBrowser.cs" />
-    <Compile Include="ViewControllers\WeatherTestViewController.cs" />
-    <Compile Include="ViewControllers\WeatherTestViewController.designer.cs">
-      <DependentUpon>WeatherTestViewController.cs</DependentUpon>
+    <Compile Include="ViewControllers\EventsCollectionViewController.cs" />
+    <Compile Include="ViewControllers\EventsCollectionViewController.designer.cs">
+      <DependentUpon>EventsCollectionViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\RemindersTableViewController.cs" />
+    <Compile Include="ViewControllers\RemindersTableViewController.designer.cs">
+      <DependentUpon>RemindersTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\AccessTableViewController.cs" />
+    <Compile Include="ViewControllers\AccessTableViewController.designer.cs">
+      <DependentUpon>AccessTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\DeviceViewController.cs" />
+    <Compile Include="ViewControllers\DeviceCollectionViewController.designer.cs">
+      <DependentUpon>DeviceViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\CollectionViewCells\EventCollectionViewCell.cs" />
+    <Compile Include="ViewControllers\CollectionViewCells\EventCollectionViewCell.designer.cs">
+      <DependentUpon>EventCollectionViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\ManageYourAccountViewController.cs" />
+    <Compile Include="ViewControllers\ManageYourAccountViewController.designer.cs">
+      <DependentUpon>ManageYourAccountViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\SettingsTableViewController.cs" />
+    <Compile Include="ViewControllers\SettingsTableViewController.designer.cs">
+      <DependentUpon>SettingsTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewControllers\OutdoorWeatherViewController.cs" />
+    <Compile Include="ViewControllers\OutdoorWeatherViewController.designer.cs">
+      <DependentUpon>OutdoorWeatherViewController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -201,12 +213,16 @@
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
     <InterfaceDefinition Include="Main.storyboard" />
+    <InterfaceDefinition Include="ViewControllers\CollectionViewCells\EventCollectionViewCell.xib" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\InFurSec.FlatApp.Core\InFurSec.FlatApp.Core.csproj">
       <Project>{40303416-0843-42A6-9C8C-08F3FA2275A3}</Project>
       <Name>InFurSec.FlatApp.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewControllers\CollectionViewCells\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
