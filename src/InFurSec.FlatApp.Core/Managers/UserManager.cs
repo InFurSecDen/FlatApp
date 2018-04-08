@@ -5,11 +5,15 @@ using System.IdentityModel.Tokens.Jwt;
 using IdentityModel.OidcClient;
 using IdentityModel.OidcClient.Browser;
 using Microsoft.IdentityModel.Tokens;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace InFurSec.FlatApp.Core
 {
     public class UserManager
     {
+		private const string OPENID_CONNECT_AUTHORITY = @"https://login.furry.nz"; 
+
         private static UserManager __instance;
 
         private JwtSecurityToken _accessToken = null;
@@ -175,11 +179,23 @@ namespace InFurSec.FlatApp.Core
 
         private OidcClient GetOidcClient()
         {
+			var scopes = new List<string>
+			{
+				"openid",
+				"profile",
+				"garagedoor.read",
+				"garagedoor.write",
+				"weather.read",
+				"lights.read",
+				"lights.write",
+				"offline_access",
+			};
+
             var options = new OidcClientOptions
             {
-                Authority = @"https://accounts.infursec.furry.nz",
+				Authority = OPENID_CONNECT_AUTHORITY,
                 ClientId = _clientId,
-                Scope = "openid profile resident garagedoor.read garagedoor.write weather.read offline_access",
+				Scope = String.Join(" ", scopes),
                 ResponseMode = OidcClientOptions.AuthorizeResponseMode.Redirect,
 
                 RedirectUri = _callbackUrl,

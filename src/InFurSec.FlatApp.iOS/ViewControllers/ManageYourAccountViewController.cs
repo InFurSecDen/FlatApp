@@ -11,11 +11,11 @@ namespace InFurSec.FlatApp.iOS
         {
         }
 
-        async partial void TempLogInButton_TouchUpInsideAsync(UIButton sender)
-        {
-            var user = UserManager.Instance;
+        async partial void TempLogInButton_TouchUpInside(UIButton sender)
+		{
+			var user = UserManager.Instance;
 
             var loginSucceeded = await user.LoginAsync();
-        }
-    }
+		}
+	}
 }

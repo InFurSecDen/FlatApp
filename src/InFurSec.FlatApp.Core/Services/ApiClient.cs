@@ -23,7 +23,7 @@ namespace InFurSec.FlatApp.Core
             var graphQLClientOptions = new GraphQLClientOptions();
             if (httpMessageHandler != null) graphQLClientOptions.HttpMessageHandler = httpMessageHandler;
 
-            _graphQlClient = new GraphQLClient(@"https://shittyapi.infursec.furry.nz:7448/graphql", graphQLClientOptions);
+            _graphQlClient = new GraphQLClient(@"https://shittyapi.infursec.furry.nz/graphql", graphQLClientOptions);
         }
 
         public Task<GarageDoor> GetGarageDoor(int Id, CancellationToken cancellationToken = default(CancellationToken))
