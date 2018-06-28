@@ -184,10 +184,6 @@
     <Compile Include="ViewControllers\AccessTableViewController.designer.cs">
       <DependentUpon>AccessTableViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewControllers\DeviceViewController.cs" />
-    <Compile Include="ViewControllers\DeviceCollectionViewController.designer.cs">
-      <DependentUpon>DeviceViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="ViewControllers\CollectionViewCells\EventCollectionViewCell.cs" />
     <Compile Include="ViewControllers\CollectionViewCells\EventCollectionViewCell.designer.cs">
       <DependentUpon>EventCollectionViewCell.cs</DependentUpon>
@@ -204,6 +200,15 @@
     <Compile Include="ViewControllers\OutdoorWeatherViewController.designer.cs">
       <DependentUpon>OutdoorWeatherViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewControllers\CollectionViewCells\DeviceMenuCollectionViewCell.cs" />
+    <Compile Include="ViewControllers\CollectionViewCells\DeviceMenuCollectionViewCell.designer.cs">
+      <DependentUpon>DeviceMenuCollectionViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sources\DeviceMenuCollectionViewSource.cs" />
+    <Compile Include="ViewControllers\DeviceMenuCollectionViewController.cs" />
+    <Compile Include="ViewControllers\DeviceMenuCollectionViewController.designer.cs">
+      <DependentUpon>DeviceMenuCollectionViewController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Entitlements.plist" />
@@ -214,6 +219,7 @@
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
     <InterfaceDefinition Include="Main.storyboard" />
     <InterfaceDefinition Include="ViewControllers\CollectionViewCells\EventCollectionViewCell.xib" />
+    <InterfaceDefinition Include="ViewControllers\CollectionViewCells\DeviceMenuCollectionViewCell.xib" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\InFurSec.FlatApp.Core\InFurSec.FlatApp.Core.csproj">
@@ -223,6 +229,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewControllers\CollectionViewCells\" />
+    <Folder Include="Sources\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
